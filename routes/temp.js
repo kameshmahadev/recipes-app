@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET recipe by ID
+// GET recipe by IDz
 router.get('/:id', async (req, res) => {
   try {
     const recipe = await Recipe.findById(req.params.id);
