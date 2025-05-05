@@ -1,18 +1,21 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const recipeRoutes = require("./routes/recipeRoutes"); // ✅ Path to routes
+const dotenv = require("dotenv");
+const connectDB = require("./config/db"); // ✅ Assuming db.js is in config folder
+const recipeRoutes = require("./routes/recipeRoutes");
+
+dotenv.config(); // ✅ Load environment variables
+
 const app = express();
+
+// Connect to MongoDB using db.js
+connectDB();
 
 // Middleware
 app.use(express.json());
 
-// Use Routes
+// Routes
 app.use("/api/recipes", recipeRoutes);
 
-// Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/recipesDB")
-  .then(() => {
-    console.log("✅ Connected to MongoDB");
-    app.listen(5000, () => console.log("🚀 Server is running on http://localhost:5000"));
-  })
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+// Start server (use Render's dynamic port or fallback to 5000 locally)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
