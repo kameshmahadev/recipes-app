@@ -9,4 +9,4 @@ const recipeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('recipe', recipeSchema);
+module.exports = mongoose.model('Recipe', recipeSchema); // Capital "Recipe" for standard practice
