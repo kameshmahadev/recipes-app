@@ -1,16 +1,41 @@
-const Recipe = require('../models/recipeModel');
+const Recipe = require('../models/Recipe');
 
-// GET all recipes
-const getAllRecipes = async (req, res) => {
-  const recipes = await Recipe.find();
-  res.json(recipes);
+// Create
+exports.createRecipe = async (req, res) => {
+  try {
+    const recipe = await Recipe.create(req.body);
+    res.status(201).json(recipe);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 };
 
-// POST create new recipe
-const createRecipe = async (req, res) => {
-  const newRecipe = new Recipe(req.body);
-  await newRecipe.save();
-  res.status(201).json(newRecipe);
+// Read
+exports.getAllRecipes = async (req, res) => {
+  try {
+    const recipes = await Recipe.find();
+    res.json(recipes);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
-module.exports = { getAllRecipes, createRecipe };
+// Update
+exports.updateRecipe = async (req, res) => {
+  try {
+    const updated = await Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(updated);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+// Delete
+exports.deleteRecipe = async (req, res) => {
+  try {
+    await Recipe.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Recipe deleted' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
