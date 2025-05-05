@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const connectDB = require("./db");
+const connectDB = require("./config/db"); // ✅ Correct path
 const recipeRoutes = require("./routes/recipeRoutes");
 
 dotenv.config(); // Load .env before using process.env
