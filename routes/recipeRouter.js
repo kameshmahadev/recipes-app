@@ -1,10 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const recipeController = require('../controllers/recipeController');
+const {
+  createRecipe,
+  getAllRecipes,
+  getRecipeById,
+  updateRecipe,
+  deleteRecipe,
+} = require("../controllers/recipeController");
 
-router.post('/recipes', recipeController.createRecipe);
-router.get('/recipes', recipeController.getAllRecipes);
-router.put('/recipes/:id', recipeController.updateRecipe);
-router.delete('/recipes/:id', recipeController.deleteRecipe);
+router.post("/", createRecipe);
+router.get("/", getAllRecipes);
+router.get("/:id", getRecipeById); // ✅ This must be here
+router.put("/:id", updateRecipe);
+router.delete("/:id", deleteRecipe);
 
 module.exports = router;
