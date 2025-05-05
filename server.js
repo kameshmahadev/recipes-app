@@ -1,7 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const recipeRoutes = require('./routes/recipeRouter'); // ✅ Corrected filename and variable name
+const connectDB = require('./config/db');
+const recipeRoutes = require('./routes/recipeRouter');
 
 dotenv.config();
 const app = express();
@@ -10,18 +10,12 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use('/api/recipes', recipeRoutes); // ✅ Now matches the variable
+app.use('/api/recipes', recipeRoutes);
 
-// Connect to MongoDB and start server
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log('✅ MongoDB connected');
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-})
-.catch((err) => {
-  console.error('❌ MongoDB connection error:', err.message);
+// Connect to DB and start server
+connectDB();
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
