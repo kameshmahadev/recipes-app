@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
-const recipeSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true },
-    ingredients: { type: [String], required: true },
-    instructions: { type: String, required: true },
+const recipeSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
   },
-  { timestamps: true }
-);
+  ingredients: [String],
+  instructions: String,
+});
 
-module.exports = mongoose.model('Recipe', recipeSchema); // Capital "Recipe" for standard practice
+const Recipe = mongoose.model('Recipe', recipeSchema);
+
+module.exports = Recipe;
