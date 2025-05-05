@@ -1,20 +1,16 @@
 const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const recipeRoutes = require('./routes/recipeRouter'); // ✅ fixed name
+const mongoose = require('mongoose');
+const recipeRouter = require('./routes/recipeRouter');
 
-dotenv.config();
 const app = express();
-
-// Connect to MongoDB
-connectDB();
-
-// Middleware
 app.use(express.json());
 
-// Routes
-app.use('/api/recipes', recipeRoutes);
+mongoose.connect('mongodb://127.0.0.1:27017/recipesDB')
+    .then(() => console.log('✅ MongoDB connected successfully'))
+    .catch(err => console.error('❌ MongoDB connection failed:', err));
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.use('/api/recipes', recipeRouter);
+
+app.listen(5000, () => {
+    console.log('🚀 Server running on port 5000');
+});
