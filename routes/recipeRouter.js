@@ -8,10 +8,19 @@ const {
   deleteRecipe,
 } = require("../controllers/recipeController");
 
+// POST /api/recipes
 router.post("/", createRecipe);
+
+// GET /api/recipes
 router.get("/", getAllRecipes);
-router.get("/:id", getRecipeById); // ✅ This must be here
+
+// GET /api/recipes/:id
+router.get("/:id", getRecipeById);
+
+// PUT /api/recipes/:id
 router.put("/:id", updateRecipe);
+
+// DELETE /api/recipes/:id
 router.delete("/:id", deleteRecipe);
 
 module.exports = router;
