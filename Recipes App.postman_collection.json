@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "16796e69-dbf4-4522-9941-33381f8f035d",
+		"name": "Recipes App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44656162"
+	},
+	"item": [
+		{
+			"name": "/api/recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Paneer Butter Masala\",\r\n  \"ingredients\": [\"Paneer\", \"Butter\", \"Tomato\", \"Cream\"],\r\n  \"instructions\": \"Cook paneer in buttery tomato gravy.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-qu4y.onrender.com/api/recipes",
+					"protocol": "https",
+					"host": [
+						"recipes-app-qu4y",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-qu4y.onrender.com/api/recipes",
+					"protocol": "https",
+					"host": [
+						"recipes-app-qu4y",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-qu4y.onrender.com/api/recipes/6819e59f1f073a2b3db743ef",
+					"protocol": "https",
+					"host": [
+						"recipes-app-qu4y",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"recipes",
+						"6819e59f1f073a2b3db743ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Paneer Tikka Masala\",\r\n  \"ingredients\": [\"Paneer\", \"Yogurt\", \"Spices\"],\r\n  \"instructions\": \"Grill paneer and mix with spicy gravy.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-qu4y.onrender.com/api/recipes/6819e59f1f073a2b3db743ef",
+					"protocol": "https",
+					"host": [
+						"recipes-app-qu4y",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"recipes",
+						"6819e59f1f073a2b3db743ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-qu4y.onrender.com/api/recipes/6819e59f1f073a2b3db743ef",
+					"protocol": "https",
+					"host": [
+						"recipes-app-qu4y",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"recipes",
+						"6819e59f1f073a2b3db743ef"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,20 +1,19 @@
 # 🍲 Recipes App - CRUD API using Node.js, Express.js & MongoDB
 
-This is a backend-only CRUD (Create, Read, Update, Delete) application that allows users to manage recipes.  
+This is a complete backend API of CRUD (Create, Read, Update, Delete) application that allows users to manage recipes.  
 Built with **Node.js**, **Express.js**, and **MongoDB (Mongoose)**, following the **MVC architectural pattern**.  
 Tested thoroughly using **Postman**, and deployed on **Render**.
 
 ---
 
 ## 🚀 Live URL (Render Deployment)
-🌐 [https://your-recipes-app.onrender.com](https://your-recipes-app.onrender.com)  
-(Replace this with your actual Render live URL)
+👉 [https://recipes-app-qu4y.onrender.com]
 
 ---
 
 ## 📂 GitHub Repository
-🔗 [https://github.com/yourusername/recipes-app](https://github.com/yourusername/recipes-app)  
-(Replace with your actual GitHub repo link)
+🔗 [https://github.com/kameshmahadev/recipes-app.git]
+
 
 ---
 
