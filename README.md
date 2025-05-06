@@ -29,3 +29,14 @@ Tested thoroughly using **Postman**, and deployed on **Render**.
 
 ## 📁 Folder Structure (MVC Pattern)
 
+## 🧪 Postman Collection
+
+You can test the API using the included Postman collection:
+
+👉 [Download Postman Collection](./recipes-api.postman_collection.json)
+
+### How to Use
+1. Open Postman.
+2. Click `Import` → Choose `recipes-api.postman_collection.json`.
+3. You will see all API requests grouped under "Recipes App".
+4. Start testing!
